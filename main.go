@@ -9,7 +9,7 @@ import (
 )
 
 const (
-	EnvSlackWebhook  = "SLACK_WEBHOOK"
+	EnvSlackWebhook  = "DEPLOY_NOTIFY_SLACK_URL"
 	EnvSlackIcon     = "SLACK_ICON"
 	EnvSlackChannel  = "SLACK_CHANNEL"
 	EnvSlackTitle    = "SLACK_TITLE"

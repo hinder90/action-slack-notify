@@ -24,7 +24,7 @@ if [[ -n "$VAULT_GITHUB_TOKEN" ]]; then
 fi
 
 if [[ -n "$VAULT_GITHUB_TOKEN" ]] || [[ -n "$VAULT_TOKEN" ]]; then
-	export SLACK_WEBHOOK=$(vault read -field=webhook secret/slack)
+	export DEPLOY_NOTIFY_SLACK_URL=$(vault read -field=webhook secret/slack)
 fi
 
 if [[ -f "$hosts_file" ]]; then

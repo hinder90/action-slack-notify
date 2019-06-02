@@ -27,11 +27,11 @@ workflow "Slack Notification Demo" {
 
 action "Slack Notification" {
   uses = "rtCamp/action-slack-notify@master"
-  secrets = ["SLACK_WEBHOOK"]
+  secrets = ["DEPLOY_NOTIFY_SLACK_URL"]
 }
 ```
 
-3. Create `SLACK_WEBHOOK` secret using [GitHub Action's Secret](https://developer.github.com/actions/creating-workflows/storing-secrets). You can [generate a Slack incoming webhook token from here](https://slack.com/apps/A0F7XDUAZ-incoming-webhooks).
+3. Create `DEPLOY_NOTIFY_SLACK_URL` secret using [GitHub Action's Secret](https://developer.github.com/actions/creating-workflows/storing-secrets). You can [generate a Slack incoming webhook token from here](https://slack.com/apps/A0F7XDUAZ-incoming-webhooks).
 
 
 ## Environment Variables
@@ -60,7 +60,7 @@ action "Slack Notification" {
     SLACK_TITLE = "Post Title",
     SLACK_MESSAGE = "Post Content :rocket:"
   }
-  secrets = ["SLACK_WEBHOOK"]
+  secrets = ["DEPLOY_NOTIFY_SLACK_URL"]
 }
 ```
 
