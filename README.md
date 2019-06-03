@@ -1,6 +1,6 @@
 > **⚠️ Note:** To use this GitHub Action, you must have access to GitHub Actions. GitHub Actions are currently only available in public beta (you must apply for access).
 
-This action is a part of [GitHub Actions Library](https://github.com/rtCamp/github-actions-library/) created by [rtCamp](https://github.com/rtCamp/).
+This action is a part of [GitHub Actions Library](https://github.com//github-actions-library/) created by [hinder90](https://github.com/hinder90/).
 
 # Slack Notify - GitHub Action
 
@@ -26,7 +26,7 @@ workflow "Slack Notification Demo" {
 }
 
 action "Slack Notification" {
-  uses = "rtCamp/action-slack-notify@master"
+  uses = "hinder90/action-slack-notify@master"
   secrets = ["DEPLOY_NOTIFY_SLACK_URL"]
 }
 ```
@@ -51,11 +51,11 @@ You can see the action block with all variables as below:
 
 ```bash
 action "Slack Notification" {
-  uses = "rtCamp/action-slack-notify@master"
+  uses = "hinder90/action-slack-notify@master"
   env = {
     SLACK_CHANNEL = "general",
     SLACK_USERNAME = "rtCamp",
-    SLACK_ICON  = "https://github.com/rtCamp.png?size=48",
+    SLACK_ICON  = "https://github.com/hinder90.png?size=48",
     SLACK_COLOR = "#3278BD"
     SLACK_TITLE = "Post Title",
     SLACK_MESSAGE = "Post Content :rocket:"
@@ -68,7 +68,7 @@ Below screenshot help you visualize message part controlled by different variabl
 
 <img width="600" alt="Screenshot_2019-03-26_at_5_56_05_PM" src="https://user-images.githubusercontent.com/4115/54997488-d1f94e00-4ff1-11e9-897f-a35ab90f525f.png">
 
-The `Site` and `SSH Host` details are only available if this action is run after [Deploy WordPress GitHub action](https://github.com/rtCamp/action-deploy-wordpress).
+The `Site` and `SSH Host` details are only available if this action is run after [Deploy WordPress GitHub action](https://github.com/hinder90/action-deploy-wordpress).
 
 ## Hashicorp Vault (Optional)
 
@@ -90,7 +90,7 @@ workflow "Slack Notification Demo" {
 }
 
 action "Slack Notification" {
-  uses = "rtCamp/action-slack-notify@master"
+  uses = "hinder90/action-slack-notify@master"
   secrets = ["VAULT_ADDR", "VAULT_TOKEN"]
 }
 ```
@@ -101,4 +101,4 @@ In the Vault, the Slack webhook should be setup as field `webhook` on path `secr
 
 ## License
 
-[MIT](LICENSE) © 2019 rtCamp
+[MIT](LICENSE) © 2019 hinder90
