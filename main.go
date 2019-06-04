@@ -41,7 +41,6 @@ type Attachment struct {
 	AuthorIcon string  `json:"author_icon,omitempty"`
 	Footer     string  `json:"footer,omitempty"`
 	Fields     []Field `json:"fields,omitempty"`
-	
 }
 
 type Field struct {
@@ -62,12 +61,12 @@ func main() {
 		os.Exit(1)
 	}
 
-	fields:= []Field{
+	fields := []Field{
 		{
 			Title: "Ref",
 			Value: os.Getenv("GITHUB_REF"),
 			Short: true,
-		},                {
+		}, {
 			Title: "Event",
 			Value: os.Getenv("GITHUB_EVENT_NAME"),
 			Short: true,
@@ -86,7 +85,7 @@ func main() {
 
 	hostName := os.Getenv(EnvHostName)
 	if hostName != "" {
-		newfields:= []Field{
+		newfields := []Field{
 			{
 				Title: os.Getenv("SITE_TITLE"),
 				Value: os.Getenv(EnvSiteName),
@@ -107,12 +106,12 @@ func main() {
 		Channel:  os.Getenv(EnvSlackChannel),
 		Attachments: []Attachment{
 			{
-				Fallback: envOr(EnvSlackMessage, "GITHUB_ACTION=" + os.Getenv("GITHUB_ACTION") + " \n GITHUB_ACTOR=" + os.Getenv("GITHUB_ACTOR") + " \n GITHUB_EVENT_NAME=" + os.Getenv("GITHUB_EVENT_NAME") + " \n GITHUB_REF=" + os.Getenv("GITHUB_REF") + " \n GITHUB_REPOSITORY=" + os.Getenv("GITHUB_REPOSITORY") + " \n GITHUB_WORKFLOW=" + os.Getenv("GITHUB_WORKFLOW")),
+				Fallback:   envOr(EnvSlackMessage, "GITHUB_ACTION="+os.Getenv("GITHUB_ACTION")+" \n GITHUB_ACTOR="+os.Getenv("GITHUB_ACTOR")+" \n GITHUB_EVENT_NAME="+os.Getenv("GITHUB_EVENT_NAME")+" \n GITHUB_REF="+os.Getenv("GITHUB_REF")+" \n GITHUB_REPOSITORY="+os.Getenv("GITHUB_REPOSITORY")+" \n GITHUB_WORKFLOW="+os.Getenv("GITHUB_WORKFLOW")),
 				Color:      envOr(EnvSlackColor, "good"),
 				AuthorName: envOr(EnvGithubActor, ""),
 				AuthorLink: "http://github.com/" + os.Getenv(EnvGithubActor),
 				AuthorIcon: "http://github.com/" + os.Getenv(EnvGithubActor) + ".png?size=32",
-				Footer: "<https://github.com/himder90/github-actions-library|Powered By himder90's GitHub Actions Library>",
+				//Footer: "<https://github.com/himder90/github-actions-library|Powered By himder90's GitHub Actions Library>",
 				Fields: fields,
 			},
 		},
