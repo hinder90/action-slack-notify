@@ -6,6 +6,7 @@ export SLACK_USERNAME=${SLACK_USERNAME:-"rtBot"}
 export CI_SCRIPT_OPTIONS="ci_script_options"
 export SLACK_TITLE=${SLACK_TITLE:-"Message"}
 export COMMIT_MESSAGE=$(cat "/github/workflow/event.json" | jq .commits | jq '.[0].message' -r)
+export RAW_JSON=$(cat "/github/workflow/event.json")
 
 hosts_file="$GITHUB_WORKSPACE/.github/hosts.yml"
 
@@ -52,7 +53,7 @@ fi
 
 
 if [[ -z "$SLACK_MESSAGE" ]]; then
-	export SLACK_MESSAGE="$COMMIT_MESSAGE"
+	export SLACK_MESSAGE="$RAW_JSON"
 fi
 
 slack-notify "$@"

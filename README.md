@@ -1,6 +1,6 @@
 > **⚠️ Note:** To use this GitHub Action, you must have access to GitHub Actions. GitHub Actions are currently only available in public beta (you must apply for access).
 
-This action is a part of [GitHub Actions Library](https://github.com//github-actions-library/) created by [hinder90](https://github.com/hinder90/).
+This action is a part of [GitHub Actions Library](https://github.com//github-actions-library/) created by [rtCamp](https://github.com/rtCamp/).
 
 # Slack Notify - GitHub Action
 
